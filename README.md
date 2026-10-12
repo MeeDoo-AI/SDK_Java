@@ -2,24 +2,40 @@
 
 > Add AI to your Java application. No AI experience needed.
 
+[![GitHub](https://img.shields.io/badge/GitHub-MeeDoo--AI%2FSDK_Java-blue)](https://github.com/MeeDoo-AI/SDK_Java)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## What is this?
 
 MeeDoo is an AI platform (like ChatGPT, but yours). This SDK lets you talk to MeeDoo's AI from your Java code.
 
+**GitHub**: https://github.com/MeeDoo-AI/SDK_Java
+**JitPack**: https://jitpack.io/#MeeDoo-AI/SDK_Java
+
 ## Installation
 
-### Option 1: Manual (no build tool)
+### Option 1: JitPack (recommended — easiest)
 
-1. Download `gson.jar` from [Maven Central](https://repo1.maven.org/maven2/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar)
-2. Download the SDK JAR (or compile from source)
-3. Add both to your classpath
+Add the JitPack repository to your `pom.xml`:
 
-### Option 2: Maven
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
 
-Add to your `pom.xml`:
+Then add the dependency:
 
 ```xml
 <dependencies>
+    <dependency>
+        <groupId>com.github.MeeDoo-AI</groupId>
+        <artifactId>SDK_Java</artifactId>
+        <version>master</version>
+    </dependency>
     <dependency>
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
@@ -28,15 +44,27 @@ Add to your `pom.xml`:
 </dependencies>
 ```
 
-Then download the SDK source and compile, or use as a submodule.
+That's it. Maven downloads everything automatically.
 
-### Option 3: Gradle
+### Option 2: Gradle + JitPack
 
 ```groovy
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
 dependencies {
+    implementation 'com.github.MeeDoo-AI:SDK_Java:master'
     implementation 'com.google.code.gson:gson:2.13.1'
 }
 ```
+
+### Option 3: Manual (no build tool)
+
+1. Download `gson.jar` from [Maven Central](https://repo1.maven.org/maven2/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar)
+2. Clone the SDK: `git clone https://github.com/MeeDoo-AI/SDK_Java.git`
+3. Compile: `javac -cp gson.jar -d . src/main/java/co/meedoo/sdk/*.java`
+4. Add both to your classpath
 
 ## Getting Started (5 minutes)
 
