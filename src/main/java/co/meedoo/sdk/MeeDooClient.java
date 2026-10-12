@@ -32,6 +32,7 @@ public class MeeDooClient {
     private final Chat chat;
     final Models models;
     final Usage usage;
+    final Files files;
 
     public MeeDooClient(String apiKey) {
         this(apiKey, "https://api.meedoo.co/api", 120, 3);
@@ -55,11 +56,13 @@ public class MeeDooClient {
         this.chat = new Chat(this);
         this.models = new Models(this);
         this.usage = new Usage(this);
+        this.files = new Files(this);
     }
 
     public Chat chat() { return chat; }
     public Models models() { return models; }
     public Usage usage() { return usage; }
+    public Files files() { return files; }
 
     String getApiKey() { return apiKey; }
     String getBaseUrl() { return baseUrl; }
