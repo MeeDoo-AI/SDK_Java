@@ -29,11 +29,7 @@ public class Test {
         );
         System.out.println("AI says: " + r3.getContent().substring(0, Math.min(100, r3.getContent().length())));
 
-        System.out.println("\n=== Test 4: MeeJudge ===");
-        var status = client.judge().statusAsJson();
-        System.out.println("Judge: enabled=" + status.get("enabled") + ", model=" + status.get("model"));
-
-        System.out.println("\n=== Test 5: Credits ===");
+        System.out.println("\n=== Test 4: Credits ===");
         var credits = client.usage().creditsAsJson();
         System.out.println("Balance: EUR" + credits.get("credit_balance"));
 
